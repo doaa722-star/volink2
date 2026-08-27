@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-cairo), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-navy: var(--navy);
+  --color-teal: var(--teal);
+  --color-cyan: var(--cyan);
+  --color-brand-blue: var(--brand-blue);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  color-scheme: light;
+
+  --background: #f4f7fa;
+  --foreground: #16233f;
+
+  --card: #ffffff;
+  --card-foreground: #16233f;
+
+  --popover: #ffffff;
+  --popover-foreground: #16233f;
+
+  /* Teal green as the primary brand action color */
+  --primary: #12a08a;
+  --primary-foreground: #ffffff;
+
+  --secondary: #eef2f7;
+  --secondary-foreground: #16233f;
+
+  --muted: #eef2f7;
+  --muted-foreground: #647089;
+
+  --accent: #e6f7f4;
+  --accent-foreground: #0f7d6c;
+
+  --destructive: #e5484d;
+  --destructive-foreground: #ffffff;
+
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #12a08a;
+
+  /* Brand palette from the Volink logo */
+  --navy: #16233f;
+  --teal: #12a08a;
+  --cyan: #2ac5d4;
+  --brand-blue: #2f5fd0;
+
+  --success: #16a34a;
+  --success-foreground: #ffffff;
+  --warning: #e5484d;
+
+  --radius: 0.875rem;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #16233f;
+  --sidebar-primary: #12a08a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef2f7;
+  --sidebar-accent-foreground: #16233f;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #12a08a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'ss01';
+  }
+}
+
+@utility brand-gradient {
+  background-image: linear-gradient(120deg, var(--cyan) 0%, var(--brand-blue) 55%, var(--navy) 100%);
+}
+
+@utility text-brand-gradient {
+  background-image: linear-gradient(120deg, var(--brand-blue), var(--teal));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
